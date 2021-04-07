@@ -1,0 +1,87 @@
+<div class="container box">
+    <div class="row mt-5">
+        <div class="col-lg-3 col-3">
+            <div class="tab">
+                <button class="tablinks text-center" onclick="openCity(event, 'NextOrder')" id="defaultOpen">Next<br>Order</button>
+                <button class="tablinks text-center" onclick="openCity(event, 'OrderHistory')">Order<br>History</button>
+                <button class="tablinks text-center" onclick="openCity(event, 'Upcoming')">Upcoming<br>Weather</button>
+                <button class="tablinks text-center" onclick="openCity(event, 'Notes')">Notes</button>
+            </div>
+        </div>
+        <div class="col-lg-9 col-9 ">
+            <div id="NextOrder" class="tabcontent">
+                <div class="row">
+                    <div class="col-lg-8 col-12 p-2 align-self-center">
+                        <button type="submit" class="bg-light ">medicine</button>
+                        <button type="submit" class="bg-light">location</button>
+                        <h3>Be prepared for</h3>
+                        <div class="pl-5">
+                            <form>
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio" checked>&nbsp;&nbsp;some effective condition</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio">&nbsp;&nbsp;some effective condition</label>
+                                </div>
+                                <div class="radio disabled">
+                                    <label><input type="radio" name="optradio">&nbsp;some effective condition</label>
+                                </div>
+                            </form>
+                        </div>
+                        <button type="submit" class="bg-warning">GET QUANTITY</button>
+                    </div>
+                    <div class="col-lg-4 col-12 align-self-center pl-5">
+                        <div class="text-right">
+                            <div class="text1">You should Order</div>
+                            <div class="text2">55 Boxes/Packs</div>
+                            <div class="text_a">
+                                <a href="">see why>></a>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--div id="OrderHistory" class="tabcontent">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p> 
+            </div>
+
+            <div id="Upcoming" class="tabcontent">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div-->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
