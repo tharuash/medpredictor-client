@@ -1,0 +1,63 @@
+<div id="NextOrder" class="tabcontent">
+  <div class="row">
+    <div class="col-lg-8 col-12 p-2 align-self-center">
+        <form [formGroup]="predictForm" (submit)="predict()">
+            <label for="medicine">Medicine</label>
+            <select id="medicine" name="medicine" formControlName="medicine" required>
+              <option value="adorastatin">Adorastatin 10mg</option>
+              <option value="metformin">Metfromin 500mg</option>
+              <option value="losatank">Lostan Potasium 50mg</option>
+              <option value="aspirin">Aspirin 75mg</option>
+              <option value="niffidipine">Niffidipine 20er</option>
+            </select>
+
+            <label for="year">Year</label>
+            <input type="number" name="year" min="2015" value="2021" style="background: #ccc" formControlName="year" required />
+
+            <label for="month">Month</label>
+            <select id="month" name="month" formControlName="month" required>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+
+
+            <h3 style="margin-top: 50px">Be prepared for</h3>
+            <div class="pl-5">
+
+              <div class="radio">
+                <label><input type="radio" name="option" value="a" formControlName="option" checked>&nbsp;&nbsp;without any conditions</label>
+              </div>
+              <div class="radio disabled">
+                <label><input type="radio" name="option" value="b" formControlName="option">&nbsp;with current covid-19 situation</label>
+              </div>
+
+            </div>
+            <button type="submit" class="bg-warning">GET QUANTITY</button>
+
+          </form>
+    </div>
+    <div class="col-lg-4 col-12 align-self-center pl-5">
+      <div class="text-right">
+        <div class="text1" *ngIf="predictedValue">You should Order</div>
+        <div class="text1" *ngIf="!predictedValue">Select Medicine and A Time</div>
+        <div class="text2" *ngIf="predictedValue">{{predictedValue}} Boxes/Packs</div>
+        <div class="text1" *ngIf="!predictedValue">To Get Predictions</div>
+        <div class="text_a">
+          <button class="btn btn-primary w-50" *ngIf="predictedValue" (click)="seeWhy()">see why>></button>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>

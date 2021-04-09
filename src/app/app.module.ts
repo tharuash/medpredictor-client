@@ -1,28 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
 import { SeewhyComponent } from './components/seewhy/seewhy.component';
-import { OrderComponent } from './components/order/order.component';
+import { RouteGuardService } from './services/guards/route.guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent,
-    SeewhyComponent,
-    OrderComponent
+    LayoutComponent,
+    PurchaseComponent,
+    SeewhyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ RouteGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

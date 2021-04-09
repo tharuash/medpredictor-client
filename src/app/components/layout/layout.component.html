@@ -1,0 +1,17 @@
+<div class="container box">
+  <div class="row mt-5">
+    <div class="col-lg-3 col-3">
+      <div class="tab" style="height: 97%; max-height: 85vh">
+        <button class="tablinks text-center" id="defaultOpen" [routerLink]="[ '/order']">Next Order</button>
+        <button class="tablinks text-center" [routerLink]="['history']">Order History</button>
+        <button class="tablinks text-center" (click)="goToWeatherSite()">Upcoming Weather</button>
+        <!--button class="tablinks text-center" style="height:24%" onclick="openCity(event, 'Notes')">Notes</button-->
+      </div>
+    </div>
+    <div class="col-lg-9 col-9">
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+</div>
+

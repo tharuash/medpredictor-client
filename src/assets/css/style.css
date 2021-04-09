@@ -3,7 +3,7 @@ body{
     color: #fff;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -62,7 +62,7 @@ span.psw {
   height: fit-content;
 }
 
-.tab button {
+.tab button, a {
   display: block;
   background-color: inherit;
   color: black;
@@ -75,13 +75,14 @@ span.psw {
   cursor: pointer;
   transition: 0.3s;
   font-size: 17px;
+  height:30%
 }
 
-.tab button:hover {
+.tab button:hover, a:hover {
   background-color: #ddd;
 }
 
-.tab button.active {
+.tab button.active, a:active{
   background-color: #ccc;
 }
 
