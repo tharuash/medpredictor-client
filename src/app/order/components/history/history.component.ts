@@ -68,11 +68,11 @@ export class HistoryComponent implements OnInit {
     });
   }
 
-  /*ngOnDestroy(): void {
+  ngOnDestroy(): void {
    if(this.ordersSubscription){
      this.ordersSubscription.unsubscribe();
    }
     
-  }*/
+  }
 
 }

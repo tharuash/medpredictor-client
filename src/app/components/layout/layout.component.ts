@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
@@ -6,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
-  constructor() { }
+  logoutSubscription: Subscription;
+  constructor(private authService: AuthService, public router: Router) { }
 
   ngOnInit() {
   }
@@ -15,6 +18,11 @@ export class LayoutComponent implements OnInit {
   goToWeatherSite() {
     console.log('routing')
     window.open('https://www.bbc.com/weather/1248991', '_blank');
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
