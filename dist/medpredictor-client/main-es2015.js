@@ -992,6 +992,26 @@ SeewhyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/paths.ts":
+/*!**************************!*\
+  !*** ./src/app/paths.ts ***!
+  \**************************/
+/*! exports provided: Paths */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Paths", function() { return Paths; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+const Paths = {
+    baseAPIUrl: 'http://127.0.0.1:8080',
+    flaskAPIUrl: 'http://127.0.0.1:5000'
+};
+
+
+/***/ }),
+
 /***/ "./src/app/services/auth.service.ts":
 /*!******************************************!*\
   !*** ./src/app/services/auth.service.ts ***!
@@ -1006,7 +1026,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _paths__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../paths */ "./src/app/paths.ts");
 
 
 
@@ -1017,7 +1037,7 @@ let AuthService = class AuthService {
         this.http = http;
     }
     login(user) {
-        const url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseAPIUrl + `/auth/login`;
+        const url = _paths__WEBPACK_IMPORTED_MODULE_4__["Paths"].baseAPIUrl + `/auth/login`;
         return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => {
             if (response.success) {
                 sessionStorage.setItem('uid', response.entity.userId);
@@ -1030,7 +1050,7 @@ let AuthService = class AuthService {
         }));
     }
     register(user) {
-        const url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseAPIUrl + `/auth/register`;
+        const url = _paths__WEBPACK_IMPORTED_MODULE_4__["Paths"].baseAPIUrl + `/auth/register`;
         return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((response) => {
             if (response.success) {
                 sessionStorage.setItem('uid', response.entity.userId);
@@ -1132,7 +1152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderService", function() { return OrderService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _paths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../paths */ "./src/app/paths.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1145,7 +1165,7 @@ let OrderService = class OrderService {
         this.http = http;
     }
     createOrder(order) {
-        const url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseAPIUrl + `/orders?uid=${sessionStorage.getItem('uid')}`;
+        const url = _paths__WEBPACK_IMPORTED_MODULE_2__["Paths"].baseAPIUrl + `/orders?uid=${sessionStorage.getItem('uid')}`;
         return this.http.post(url, order).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(response => {
             if (response.success) {
                 return response.entity;
@@ -1156,7 +1176,7 @@ let OrderService = class OrderService {
         }));
     }
     getOrderHistory() {
-        const url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseAPIUrl + `/orders`;
+        const url = _paths__WEBPACK_IMPORTED_MODULE_2__["Paths"].baseAPIUrl + `/orders`;
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(response => {
             if (response.success) {
                 return response.entityList;

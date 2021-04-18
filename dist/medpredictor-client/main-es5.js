@@ -1827,6 +1827,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/paths.ts":
+  /*!**************************!*\
+    !*** ./src/app/paths.ts ***!
+    \**************************/
+
+  /*! exports provided: Paths */
+
+  /***/
+  function srcAppPathsTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Paths", function () {
+      return Paths;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var Paths = {
+      baseAPIUrl: 'http://127.0.0.1:8080',
+      flaskAPIUrl: 'http://127.0.0.1:5000'
+    };
+    /***/
+  },
+
+  /***/
   "./src/app/services/auth.service.ts":
   /*!******************************************!*\
     !*** ./src/app/services/auth.service.ts ***!
@@ -1872,9 +1905,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! src/environments/environment */
-    "./src/environments/environment.ts");
+    var _paths__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../paths */
+    "./src/app/paths.ts");
 
     var AuthService = /*#__PURE__*/function () {
       function AuthService(http) {
@@ -1886,7 +1919,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthService, [{
         key: "login",
         value: function login(user) {
-          var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseAPIUrl + "/auth/login";
+          var url = _paths__WEBPACK_IMPORTED_MODULE_4__["Paths"].baseAPIUrl + "/auth/login";
           return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             if (response.success) {
               sessionStorage.setItem('uid', response.entity.userId);
@@ -1906,7 +1939,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "register",
         value: function register(user) {
-          var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseAPIUrl + "/auth/register";
+          var url = _paths__WEBPACK_IMPORTED_MODULE_4__["Paths"].baseAPIUrl + "/auth/register";
           return this.http.post(url, user).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             if (response.success) {
               sessionStorage.setItem('uid', response.entity.userId);
@@ -2085,9 +2118,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! src/environments/environment */
-    "./src/environments/environment.ts");
+    var _paths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../paths */
+    "./src/app/paths.ts");
     /* harmony import */
 
 
@@ -2111,7 +2144,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OrderService, [{
         key: "createOrder",
         value: function createOrder(order) {
-          var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseAPIUrl + "/orders?uid=".concat(sessionStorage.getItem('uid'));
+          var url = _paths__WEBPACK_IMPORTED_MODULE_2__["Paths"].baseAPIUrl + "/orders?uid=".concat(sessionStorage.getItem('uid'));
           return this.http.post(url, order).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
             if (response.success) {
               return response.entity;
@@ -2123,7 +2156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOrderHistory",
         value: function getOrderHistory() {
-          var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseAPIUrl + "/orders";
+          var url = _paths__WEBPACK_IMPORTED_MODULE_2__["Paths"].baseAPIUrl + "/orders";
           return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
             if (response.success) {
               return response.entityList;

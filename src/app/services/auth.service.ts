@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { Paths } from '../paths';
 import { AuthResponse } from '../models/auth.response';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(user: User): Observable<AuthResponse> {
-    const url = environment.baseAPIUrl + `/auth/login`;
+    const url = Paths.baseAPIUrl + `/auth/login`;
     return this.http.post<any>(url, user).pipe(
       map((response) => {
         if (response.success) {
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   register(user: User): Observable<AuthResponse> {
-    const url = environment.baseAPIUrl + `/auth/register`;
+    const url = Paths.baseAPIUrl + `/auth/register`;
     return this.http.post<any>(url, user).pipe(
       map((response) => {
         if (response.success) {

@@ -548,9 +548,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! src/environments/environment */
-    "./src/environments/environment.ts");
+    var _paths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../paths */
+    "./src/app/paths.ts");
     /* harmony import */
 
 
@@ -568,7 +568,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PredictionService, [{
         key: "getPrediction",
         value: function getPrediction(predictionRequest) {
-          var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].flaskAPIUrl + "/predict";
+          var url = _paths__WEBPACK_IMPORTED_MODULE_2__["Paths"].flaskAPIUrl + "/predict";
           return this.http.post(url, predictionRequest);
         }
       }]);
