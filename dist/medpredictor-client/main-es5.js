@@ -1855,8 +1855,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var Paths = {
       /*baseAPIUrl: 'http://127.0.0.1:8080',
       flaskAPIUrl: 'http://127.0.0.1:5000'*/
-      baseAPIUrl: '/spring_api',
-      flaskAPIUrl: '/flask_api'
+      baseAPIUrl: 'spring_api',
+      flaskAPIUrl: 'flask_api'
     };
     /***/
   },
