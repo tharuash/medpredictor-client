@@ -22,6 +22,7 @@ export class SeewhyComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private orderService: OrderService, private router: Router) { }
 
+  // when component is mounting, the path params are obtained
   ngOnInit() {
     const medicineWithType = this.route.snapshot.paramMap.get('medicine');
     this.medicine = medicineWithType.split('_')[0];
@@ -79,10 +80,12 @@ export class SeewhyComponent implements OnInit {
     );
   }
 
+  // navigate to purchase component with custom quatity
   orderCustomQuantity(){
     this.router.navigate(['/purchase', this.medicine + '_' + this.year + '_' + this.month + '_' + '0' + '_' + false]);
   }
 
+  // navigate to purchase component with predicted quatity
   orderPredictedQuantity(){
     this.router.navigate(['/purchase', this.medicine + '_' + this.year + '_' + this.month + '_' + this.quantity + '_' + true]);
   }

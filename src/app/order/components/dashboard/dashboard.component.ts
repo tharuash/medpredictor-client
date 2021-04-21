@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  // create get prediction request and handle responses
   predict() {
     this.selectedMedicine = this.predictForm.value.medicine;
     this.selectedOption = this.predictForm.value.option[0];
@@ -54,6 +55,7 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  // navigates to see why component with selected params
   seeWhy() {
     if (this.selectedMedicine) {
       const medicine = this.selectedMedicine + '_' + this.selectedOption + '_' + this.predictedValue + '_' +this.predictForm.value.year + '_' + this.predictForm.value.month;

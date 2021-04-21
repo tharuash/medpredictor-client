@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   loginSubscriber: Subscription;
+
+  // login form
   loginForm = this.formBuilder.group({
     username: '',
     password: ''
@@ -24,6 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  // creates user login request and process responses
   login() {
     const user: User = {
       userId : 0,

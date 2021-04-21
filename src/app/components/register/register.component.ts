@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  // create user registration request and process outputs
   register() {
     const user: User = {
       userId : 0,

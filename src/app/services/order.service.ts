@@ -14,6 +14,7 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
+  // create order API call
   createOrder(order: Order): Observable<Order> {
     const url = Paths.baseAPIUrl + `/orders?uid=${sessionStorage.getItem('uid')}`;
     return this.http.post<any>(url, order).pipe(
@@ -27,6 +28,7 @@ export class OrderService {
     );
   }
 
+  // get order history API call
   getOrderHistory(): Observable<Order[]> {
     const url = Paths.baseAPIUrl + `/orders`;
     return this.http.get<any>(url).pipe(

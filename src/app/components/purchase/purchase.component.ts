@@ -28,6 +28,7 @@ export class PurchaseComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private orderService: OrderService, private router: Router, private formBuilder: FormBuilder) { }
 
+  // when component mounting, path parameters are obtained
   ngOnInit() {
     const details = this.route.snapshot.paramMap.get('details');
     this.medicine = details.split('_')[0];
@@ -42,6 +43,7 @@ export class PurchaseComponent implements OnInit {
     }
   }
 
+  // creates order request and process responses
   purchaseOrder(){
     const order: Order = {
       orderId: 0,

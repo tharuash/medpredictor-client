@@ -12,6 +12,7 @@ export class PredictionService {
 
   constructor(private http: HttpClient) { }
 
+  // get prediction API call
   getPrediction(predictionRequest: PredictionRequest): Observable<PredictionResponse> {
     const url = Paths.flaskAPIUrl + `/predict`;
     return this.http.post<PredictionResponse>(url, predictionRequest);

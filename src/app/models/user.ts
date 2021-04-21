@@ -1,3 +1,4 @@
+// User model
 export interface User {
     userId: number;
     username: string;

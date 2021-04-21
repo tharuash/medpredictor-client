@@ -11,6 +11,7 @@ export class RouteGuardService implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) { }
 
+  // route activation for already signed in user
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
       if (this.authService.getUserId())  {
         return true;

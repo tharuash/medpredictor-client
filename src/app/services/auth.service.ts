@@ -13,6 +13,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  // login user API call
   login(user: User): Observable<AuthResponse> {
     const url = Paths.baseAPIUrl + `/auth/login`;
     return this.http.post<any>(url, user).pipe(
@@ -28,6 +29,7 @@ export class AuthService {
     );
   }
 
+  // register user API call
   register(user: User): Observable<AuthResponse> {
     const url = Paths.baseAPIUrl + `/auth/register`;
     return this.http.post<any>(url, user).pipe(

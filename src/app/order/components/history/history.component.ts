@@ -22,6 +22,7 @@ export class HistoryComponent implements OnInit {
   constructor(private orderService: OrderService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    // loads latest orders to component when loading
     this.ordersSubscription = this.orderService.getOrderHistory().subscribe(
       data => {
         this.orders = data;
@@ -33,6 +34,7 @@ export class HistoryComponent implements OnInit {
     );
   }
 
+  // divide orders to two order arrays 
   divideToOrderColumns(orders: Order[]){
     this.orderColumnOne = [];
     this.orderColumnTwo = [];
@@ -50,6 +52,7 @@ export class HistoryComponent implements OnInit {
     });
   }
 
+  // search order of selected medicine
   search(){
     const orders = this.orders;
     this.orderColumnOne = [];

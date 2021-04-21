@@ -1,3 +1,4 @@
+// Order model
 export interface Order {
     orderId: number;
     medicine: string;
